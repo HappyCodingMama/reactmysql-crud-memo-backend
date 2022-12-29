@@ -17,6 +17,10 @@ const db = mysql.createConnection({
   database: 'library',
 });
 
+app.get('/', (req, res) => {
+  res.json('hello');
+});
+
 app.get('/books', (req, res) => {
   const q = 'SELECT * FROM books;';
   db.query(q, (err, data) => {
